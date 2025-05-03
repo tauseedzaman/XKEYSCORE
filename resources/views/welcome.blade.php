@@ -22,25 +22,26 @@
 <body class="bg-light text-dark flex flex-column min-vh-100">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary sticky-top shadow-sm py-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">XKEYSCORE</a>
+            <a class="navbar-brand fw-bold fs-4" href="#">XKEYSCORE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a class="nav-link fw-semibold" href="{{ url('/dashboard') }}">Dashboard</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Log in</a>
+                        <a class="nav-link fw-semibold" href="{{ route('login') }}">Log in</a>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link fw-semibold" href="{{ route('register') }}">Register</a>
                     </li>
                     @endif
                     @endauth
@@ -48,6 +49,7 @@
             </div>
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <div class="container-fluid bg-dark text-white py-5 text-center">
