@@ -16,11 +16,10 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/dashboard', [DashobardController::class, 'dashboard'])->name('dashboard');
         Route::get('/search', [DashobardController::class, 'results'])->name('search.results');
-        Route::get('/accounts/{id}', [DashobardController::class, 'accounts_show'])->name('accounts.show');
+        Route::get('/accounts/{uuid}', [DashobardController::class, 'accounts_show'])->name('accounts.show');
         Route::get('/messages/{id}', [DashobardController::class, 'messages_show'])->name('messages.show');
         Route::get('/locations/{id}', [DashobardController::class, 'locations_show'])->name('locations.show');
         Route::get('/credentials/{id}', [DashobardController::class, 'credentials_show'])->name('credentials.show');
-
 
     });
 });

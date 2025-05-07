@@ -122,4 +122,9 @@ class DashobardController extends Controller
         ));
     }
 
+    public function accounts_show($uuid)
+    {
+        $account = Account::with(['messages', 'credentials', 'activities', 'locations', 'purchases', 'socials'])->where('uuid',$uuid)->firstOrFail();
+        return view('accounts.show', compact('account'));
+    }
 }
